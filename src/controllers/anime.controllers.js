@@ -1,6 +1,6 @@
 const animesService = require("../services/anime.services.js");
 const mongoose = require("mongoose");
-const res = require("express/lib/response");
+const response = require("express/lib/response");
 
 const findAllAnimesService = async () => {
   const Allanimes = await animesService.findAllAnimesService();
@@ -28,7 +28,7 @@ const creatAnimeController = async (req, res) => {
 const updateAnimeController = async (req, res) => {
   const idParam = req.params.id;
   const editAnime = req.body;
-
+  
   const updatedAnime = await animesService.updateAnimeService(
     idParam,
     editAnime
