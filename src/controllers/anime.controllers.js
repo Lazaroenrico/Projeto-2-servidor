@@ -1,7 +1,7 @@
 const animesService = require("../services/anime.services.js");
 const mongoose = require("mongoose");
 
-const findAllAnimesService = async () => {
+const findAllAnimesService = async (req,res) => {
   const Allanimes = await animesService.findAllAnimesService();
   if (Allanimes.length == 0) {
     return res.status(404).send({ message: " Anime não encontrado!" });

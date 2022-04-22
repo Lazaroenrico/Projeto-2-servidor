@@ -1,0 +1,24 @@
+[
+    {
+      "name": "One piece",
+      "type": "Shounen, Comédia, Aventura e Ação.",
+      "description": "Uma história de um grupo de piratas liderado por Monkey D. Luffy. O garoto, que possui um corpo elástico, que pretende se tornar o Rei dos Piratas e para isso deve encontrar o One Piece, que é um tesouro misterioso capaz de torná-lo imbatível, segundo as lendas.",
+      "image": "./assets/Img/One Piece.png",
+      "episodes": 1014
+    },
+    {
+      "name": "Tokyo Revengers",
+      "type": "Shounen, Escolar, Drama e Ação.",
+      "description": "Tokyo Revengers gira em torno de Takemichi Hanagaki, um homem de 26 anos mal sucedido na vida em todos os âmbitos, desde o profissional à relações amorosas. Um certo dia, ao assistir um jornal na TV, Takemichi descobre que sua primeira namorada havia sido morta num incidente que envolvia gangues de Tokyo e com isso ele tenta se suicidar, mas as coisas não vão de acordo com o planejado.",
+      "image": "./assets/Img/Tokyo Revengers.png",
+      "episodes": 24
+    },
+    {
+      "name": "Bone",
+      "type": "Shounen, Aventura, Comédia e Ação.",
+      "description": "A história de Fairy Tail gira em torno das aventuras de seus protagonistas, Natsu Dragneel a maga Lucy Heartfilia, tendo o gato Happy.Quando Natsu Dragneel e Happy desembarcam para procurar Igneel, o dragão que criou Natsu como se fosse um filho, e que um dia repentinamente sumiu. Lucy encontra Natsu e Happy ocasionalmente. ",
+      "image": "./assets/Img/Tokyo Revengers.png",
+      "episodes": 328
+    }
+  ]
+  
