@@ -1,6 +1,5 @@
 const animesService = require("../services/anime.services.js");
 const mongoose = require("mongoose");
-const response = require("express/lib/response");
 
 const findAllAnimesService = async () => {
   const Allanimes = await animesService.findAllAnimesService();
