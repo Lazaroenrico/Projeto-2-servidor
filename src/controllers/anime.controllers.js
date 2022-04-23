@@ -19,7 +19,7 @@ const findBYIdAnimeController = async (req, res) => {
 };
 
 const creatAnimeController = async (req, res) => {
-  const anime = req.body;
+  const anime = req.body; 
   const newAnime = await animesService.createAnimeService(anime);
   res.status(201).send(newAnime);
 };
@@ -39,7 +39,7 @@ const deleteAnimeController = async (req, res) => {
   const idParam = req.params.id;
 
   await animesService.deleteAnimeService(idParam);
-  res.send({ messsage: "Anime deltado com sucessso!" });
+  res.send({ message: "Anime deltado com sucessso!" });
 };
 
 module.exports = {
