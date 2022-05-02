@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-const localURL = "mongodb://localhost:27017/adega-db"
+
+
+const localURL = "mongodb+srv://root:root@adega.euqou.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 
 const connectToDatabase = () => {

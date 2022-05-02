@@ -28,7 +28,7 @@ const updateGarrafaController = async (req, res) => {
   const idParam = req.params.id;
   const editGarrafa = req.body;
   
-  const updatedGarrafa = await animesService.updateGarrafaService(
+  const updatedGarrafa = await garrafasService.updateGarrafaService(
     idParam,
     editGarrafa
   );
