@@ -9,17 +9,17 @@ const validId = (req, res, next) => {
 };
 
 const validObjectBody = (req, res, next) => {
-  const anime = req.body;
+  const garrafa = req.body;
   if (
-    !anime ||
-    !anime.name ||
-    !anime.type ||
-    !anime.description ||
-    !anime.image ||
-    !anime.episodes
+    !garrafa ||
+    !garrafa.titulo ||
+    !garrafa.tipo ||
+    !garrafa.descricao ||
+    !garrafa.foto ||
+    !garrafa.preco
   ) {
     return res.status(400).send({
-      message: "Preencha todos os dados para adicionar um novo anime",
+      message: "Preencha todos os dados para adicionar uma nova garrafa",
     });
   }
   next();

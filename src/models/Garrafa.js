@@ -1,28 +1,28 @@
 const mongoose = require("mongoose");
 
-const AnimeSchema = new mongoose.Schema({
-  name: {
+const GarrafaSchema = new mongoose.Schema({
+  titulo: {
     type: String,
     require: true,
   },
-  type: {
+  tipo: {
     type: String,
     require: true,
   },
-  description: {
+  descricao: {
     type: String,
     require: true,
   },
-  image: {
+  foto: {
     type: String,
     require: true,
   },
-  episodes: {
-    type: Number,
+  preco: {
+    type: String,
     require: true,
   },
 });
 
-const Anime = mongoose.model("animes", AnimeSchema);
+const Garrafa = mongoose.model("adega", GarrafaSchema);
 
-module.exports = Anime;
+module.exports = Garrafa;

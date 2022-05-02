@@ -1,0 +1,316 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API Adega",
+      "description": "API para CRUD de uma Adega que possui Vinhos e Whisky",
+      "termsOfService": "",
+      "contact": {
+        "email": "lazaro.enr.menezes@gmail.com"
+      },
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/adega",
+        "description": "API de teste"
+      }
+    ],
+    "paths": {
+      "/all-garrafas": {
+        "get": {
+          "summary": "Lista de todas as garrafas",
+          "description": "Rota responsável por listar todas as garrafas",
+          "tags": ["Garrafas"],
+          "responses": {
+            "404": {
+              "description": "Not Found"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Garrafas"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/one-garrafa/{id}": {
+        "get": {
+          "summary": "Busca uma garrafa pelo ID",
+          "description": "Rota responsável por buscar uma garrafa pelo ID",
+          "tags": ["Garrafas"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id da garrafa para a busca",
+              "required": true
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Garrafas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/create-garrafa": {
+        "post": {
+          "summary": "Cadastrar uma garrafa",
+          "description": "Rota responsável por cadastrar uma garrafa",
+          "tags": ["Garrafa"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Garrafas"
+                },
+                "examples": {
+                  "Paletas": {
+                    "value": {
+                      "titulo": "Johnnie Walker Double Black",
+                      "tipo": "Whisky Escocês",
+                      "descricao": "Quam vulputate dignissim suspendisse in est ante in nibh mauriEssa bebida sofre forte influência da Costa Oeste e da Ilha, e é melhor apreciada com água para desvendar suas complexas camadas de sabor defumado e rico em especiarias.",
+                      "foto": "assets/images/Johnnie Walker Double.png",
+                      "preco": "189,90"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Garrafas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/update-garrafa/{id}": {
+        "put": {
+          "summary": "Editar uma garrafa pelo ID",
+          "description": "Rota responsável por editar uma garrafa pelo ID",
+          "tags": ["Garrafas"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id da garrafa para a busca",
+              "required": true
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Garrafas"
+                },
+                "examples": {
+                  "Paletas": {
+                    "value": {
+                      "sabor": "Gran Coronas",
+                      "tipo": "Vinho Espanhol",
+                      "descricao": "Vinho com frutas vermelhas, como cereja e amora com toque de especiarias",
+                      "foto": "./assets/images/Gran Corona.png",
+                      "preco": "174,69"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Garrafas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/delete-garrafa/{id}": {
+        "delete": {
+          "summary": "Apagar uma garrafa pelo ID",
+          "description": "Rota responsável por apagar uma garrafa pelo ID",
+          "tags": ["Garrafas"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id da garrafa para deleção",
+              "required": true
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/all-carrinho": {
+        "get": {
+          "summary": "Lista de todos os itens do carrinho",
+          "description": "Rota responsável por listar todos os itens do carrinho",
+          "tags": ["Carrinho"],
+          "responses": {
+            "404": {
+              "description": "Not Found"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Carrinho"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/create-carrinho": {
+        "post": {
+          "summary": "Cadastrar vários itens no carrinho",
+          "description": "Rota responsável por cadastrar vários itens no carrinho",
+          "tags": ["Carrinho"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Carrinho"
+                },
+                "examples": {
+                  "Carrinho": {
+                    "value": [
+                      {
+                        "paletaId": "624230fdcd38269205c82197",
+                        "quantidade": 5
+                      },
+                      {
+                        "paletaId": "62423c1e618f4a4738a5ee75",
+                        "quantidade": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Carrinho"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/finish-carrinho": {
+          "delete": {
+            "summary": "Apagar todos os itens do carrinho",
+            "description": "Rota responsável por apagar todos os itens do carrinho",
+            "tags": ["Carrinho"],
+            "responses": {
+              "400": {
+                "description": "Bad Request"
+              },
+              "200": {
+                "description": "OK"
+              }
+            }
+          }
+        }
+    },
+    "components": {
+      "schemas": {
+        "Garrafas": {
+          "type": "object",
+          "properties": {
+            "titulo": {
+              "type": "string"
+            },
+            "tipo": {
+                "type": "string"
+              },
+            "descricao": {
+              "type": "string"
+            },
+            "foto": {
+              "type": "string"
+            },
+            "preco": {
+              "type": "string"
+            }
+          }
+        },
+        "Carrinho": {
+          "type": "object",
+          "properties": {
+            "garrafaId": {
+              "type": "string"
+            },
+            "quantidade": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
