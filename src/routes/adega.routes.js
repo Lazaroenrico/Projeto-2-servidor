@@ -6,7 +6,7 @@ const swaggerDocument = require('../../swagger.json');
 const {
   validId,
   validObjectBody,
-} = require("../middlewares/adega.meddleware.js");
+} = require("../middlewares/Adega.meddleware.js");
 
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
