@@ -1,12 +1,21 @@
 const mongoose = require("mongoose");
+const remoteUrl = 'mongodb+srv://root:root@adega.euqou.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+ const localUrl =   '';  
+ function connectToDatabase() { mongoose    
+   .connect(`${remoteUrl}`, {      
+      useNewUrlParser: true,       
+      useUnifiedTopology: true,     
+    })     .then(() => {       
+      console.log('MongoDB conectado');    
+     })     
+     .catch((err) => {       
+       return console.log(`Erro na conexão com o banco : ${err}`);     
+      }); }  module.exports = connectToDatabase;
 
-
-const localURL = "mongodb+srv://root:root@adega.euqou.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
-
+/*
 const connectToDatabase = () => {
   mongoose
-    .connect(`${localURL}`, {
+    .connect(process.env.URI_DATABASE, { 
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -15,3 +24,4 @@ const connectToDatabase = () => {
 };
 
 module.exports = connectToDatabase;
+*/
