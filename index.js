@@ -3,7 +3,7 @@ const cors = require("cors");
 const routes = require("./src/routes/adega.routes.js");
 const connectToDatabase = require("./src/database/database.js");
 
-const port = 3333;
+const port = process.env.PORT || 3333;
 const app = express();
 
 connectToDatabase();

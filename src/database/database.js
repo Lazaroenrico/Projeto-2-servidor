@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 
 
-const localURL = "mongodb+srv://root:root@adega.euqou.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
 
 const connectToDatabase = () => {
   mongoose
-    .connect(`${localURL}`, {
+    .connect(process.env.URI_DATABASE, { 
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
